@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version='1.9'>
+  <model name='pole'>
+    <pose>0 0 0 0 0 0</pose>
+    <link name='cylinder_link'>
+      <collision name='cylinder_collision'>
+        <geometry>
+            <cylinder>
+              <radius>0.0127</radius>
+              <length>3</length>
+            </cylinder>
+          </geometry>
+        <surface>
+          <friction>
+            <ode/>
+          </friction>
+          <bounce/>
+          <contact/>
+        </surface>
+      </collision>
+      <visual name='cylinder_visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.0127</radius>
+              <length>3</length>
+            </cylinder>
+          </geometry>
+          <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          </material>
+        </visual>
+      <pose>0 0 0 0 0 0</pose>
+      <enable_wind>false</enable_wind>
+    </link>
+    <static>true</static>
+    <self_collide>false</self_collide>
+  </model>
+</sdf>

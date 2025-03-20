@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version='1.9'>
+<model name='box'>
+  <pose>0 0 0 0 0 0</pose>
+  <link name='box_link'>
+    <collision name='box_collision'>
+      <geometry>
+        <box>
+          <size>0.4 0.4 2</size>
+        </box>
+      </geometry>
+      <surface>
+        <friction>
+          <ode/>
+        </friction>
+        <bounce/>
+        <contact/>
+      </surface>
+    </collision>
+    <visual name='visual'>
+      <geometry>
+        <box>
+          <size>0.45 0.45 2</size>
+        </box>
+      </geometry>
+      <material>
+        <ambient>0.25 0.25 0.25 1.0</ambient>
+        <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        <specular>0.774597 0.774597 0.774597 1.0</specular>
+      </material>
+    </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <enable_wind>false</enable_wind>
+  </link>
+  <static>true</static>
+  <self_collide>false</self_collide>
+</model>
+</sdf>

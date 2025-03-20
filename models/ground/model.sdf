@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version='1.9'>
+<model name='arena_ground'>
+  <pose>4 4 -0.2 0 0 0</pose>
+  <link name='box_link'>
+    <collision name='box_collision'>
+      <geometry>
+        <box>
+          <size>8 8 0.4</size>
+        </box>
+      </geometry>
+      <surface>
+        <friction>
+          <ode/>
+        </friction>
+        <bounce/>
+        <contact/>
+      </surface>
+    </collision>
+    <visual name='box_visual'>
+      <geometry>
+        <box>
+          <size>8 8 0.4</size>
+        </box>
+      </geometry>
+      <material>
+        <ambient>0.8 0.8 0.8 1.0</ambient> <!-- Light grey -->
+        <diffuse>0.8 0.8 0.8 1.0</diffuse>
+        <specular>0.2 0.2 0.2 1.0</specular>
+      </material>
+    </visual>
+    <pose>0 0 0 0 0 0</pose>
+    <enable_wind>false</enable_wind>
+  </link>
+  <static>true</static>
+  <self_collide>false</self_collide>
+</model>
+</sdf>

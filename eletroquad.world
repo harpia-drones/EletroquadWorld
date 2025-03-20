@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version='1.9'>
+  <world name='DesafioDrones_v2.9'>
+
+    <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+    <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <gravity>0 0 -9.8000000000000007</gravity>
+    <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+
+    <scene>
+      <ambient>0.400000006 0.400000006 0.400000006 1</ambient>
+      <background>0.699999988 0.699999988 0.699999988 1</background>
+      <sky/>
+      <shadows>true</shadows>
+      <grid>false</grid>
+    </scene>
+
+    <!--Plataforma base-->
+    <model name="ground_plane">
+			<include>
+        <uri>models/ground_plane</uri>
+      </include>
+		</model>
+
+    <!-- 2 suportes -->
+    <model name="suporte_1">
+			<include>
+        <uri>models/suporte</uri>
+      </include>
+      <pose>-11 -3.5 1 0 0 0</pose>
+		</model>
+
+    <model name="suporte_2">
+			<include>
+        <uri>models/suporte</uri>
+      </include>
+      <pose>-7.55 -3.5 1 0 0 0</pose>
+		</model>
+
+    <!-- plataforma + caminho -->
+    <model name="figura_caminho">
+			<include>
+        <uri>models/figure_path</uri>
+      </include>
+      <pose>-7.55 -1.6 0.001 0 0 0</pose>
+		</model>
+
+    <!-- mangueira -->
+    <model name="mangueira">
+			<include>
+        <uri>models/hose</uri>
+      </include>
+      <pose> -9.275 -3.5 1.99 0 1.5708 0</pose> <!--  girado por 90 graus em rad (pi/2) -->
+    </model>
+
+    <!-- 8 figuras -->
+    <model name="figure1">
+      <include>
+        <uri>models/figure1</uri>
+      </include>
+      <pose>1.8 6.7 0.001 0 0 0</pose>
+    </model>
+
+    <model name="figure2">
+      <include>
+        <uri>models/figure2</uri>
+      </include>
+      <pose>1.7 11.1 0.001 0 0 0</pose>
+    </model>
+
+    <model name="figure3">
+      <include>
+        <uri>models/figure3</uri>
+      </include>
+      <pose>3.9 5.9 0.001 0 0 0</pose>
+    </model>
+
+    <model name="figure4">
+      <include>
+        <uri>models/figure4</uri>
+      </include>
+      <pose>4.4 8.9 0.001 0 0 0</pose>
+    </model>
+
+    <model name="figure5">
+      <include>
+        <uri>models/figure5</uri>
+      </include>
+      <pose>4.2 12.2 0.001 0 0 0</pose>
+    </model>
+
+    <model name="figure6">
+      <include>
+        <uri>models/figure6</uri>
+      </include>
+      <pose>6.5 6.0 0.001 0 0 0</pose>
+    </model>
+
+    <model name="figure7">
+      <include>
+        <uri>models/figure7</uri>
+      </include>
+      <pose>6.5 9.5 0.001 0 0 0</pose>
+    </model>
+
+    <model name="figure8">
+      <include>
+        <uri>models/figure8</uri>
+      </include>
+      <pose>6.9 12.1 0.001 0 0 0</pose>
+    </model>
+
+    <!-- 4 traves -->
+    
+    <model name="trave_cyan">
+      <include>
+        <uri>models/pole_cyan</uri>
+      </include>
+      <pose>0 -5.8 1.25 0 0 0</pose>
+    </model>
+
+    <model name="trave_preta">
+      <include>
+        <uri>models/pole_black</uri>
+      </include>
+      <pose>2.2 -6.5 1.25 0 0 0</pose>
+    </model>
+
+    <model name="trave_rosa">
+      <include>
+        <uri>models/pole_pink</uri>
+      </include>
+      <pose>4.3 -6.2 1.25 0 0 0</pose>
+    </model>
+
+    <model name="trave_vermelha">
+      <include>
+        <uri>models/pole_red</uri>
+      </include>
+      <pose>6.2 -4.7 1.25 0 0 0</pose>
+    </model>
+
+    <!-- luz -->
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.10000000000000001 -0.90000000000000002</direction>
+      <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+      <specular>0.200000003 0.200000003 0.200000003 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+  </world>
+</sdf>
